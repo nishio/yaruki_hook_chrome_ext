@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+
+  "name": "やる気フック",
+  "description": "やる気を出すシステムへ誘導するメッセージを特定のサイトの表示時に出す",
+  "version": "1.0",
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+          "https://www.facebook.com/*",
+          "https://twitter.com/*",
+          "http://b.hatena.ne.jp/*"
+      ],
+      "css": ["jquery-ui-1.11.0.custom/jquery-ui.structure.min.css",
+              "jquery-ui-1.11.0.custom/jquery-ui.theme.min.css",
+              "jquery-ui-1.11.0.custom/jquery-ui.min.css",
+              "content.css"
+      ],
+      "js": ["jquery-ui-1.11.0.custom/external/jquery/jquery.js",
+             "jquery-ui-1.11.0.custom/jquery-ui.min.js",
+             "content_script.js"
+      ]
+    }
+  ]
+}

@@ -10,4 +10,11 @@ TODO
 ====
 
 - フック対象をユーザが設定できるようにする
+- 「5分だけ見る」を選んだ回数を集計する
+
+License
+=======
+
+MIT License http://opensource.org/licenses/MIT
+
 

@@ -25,9 +25,15 @@ function main() {
                     $(this).dialog('close');
                 }
             }
-        ]
-});
+        ],
 
+        // inhibit scrolling while dialog is shown
+        open: function(event, ui) {
+            $("body").css({ overflow: 'hidden' })
+        },
+        beforeClose: function(event, ui) {
+            $("body").css({ overflow: 'inherit' })
+        }
     });
 }
 

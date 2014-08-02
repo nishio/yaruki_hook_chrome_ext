@@ -21,6 +21,7 @@ function notify_all() {
 chrome.extension.onConnect.addListener(function(port) {
   port.onMessage.addListener(function(msg) {
       if (msg.type == 'setTimeout') {
+          if (in_coffee_break) return;  // already in break
           emit_log('start timer');
           in_coffee_break = true;
           setTimeout(function() {

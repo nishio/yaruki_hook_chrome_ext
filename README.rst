@@ -22,8 +22,6 @@ Chrome Web Storeからインストールできます。 https://chrome.google.co
 - 「5分だけ見る」を選んだ回数を集計する
 - アイコンにパイチャートを出して、5分間の休憩時間がいくら残ってるか可視化
 - アイコンからのポップアップで集計データを可視化
-- 自分がどんなサイトをどれくらいの時間見ているかを可視化して、フック対象を選ぶことを助ける
-
 
 デザイン
 ========
@@ -31,6 +29,21 @@ Chrome Web Storeからインストールできます。 https://chrome.google.co
 5分間の休憩時間は、ドメインやページごとではなく、ブラウザ全体で共有されています。
 これは、この拡張が扱っているものが個別のサービスやページではなく、ブラウザの前に座っている「1人の人間」だからです。
 なので例えば、人間がTwitterを開いて「今から5分間休憩とする」と意思決定し、その1分後にFacebookを開いた場合は、休憩期間継続中と考え、ダイアログを表示しません。
+
+
+自分の行動を観察
+================
+
+拡張機能→やる気フック→バックグラウンドページ とたどることで自分の行動のログを見ることができます。
+
+  1:16:28: opened www.facebook.com, in_break: false
+  1:16:31: start timer
+  1:17:36: opened twitter.com, in_break: true
+  1:18:51: opened b.hatena.ne.jp, in_break: true
+  1:21:31: timeout
+  1:21:37: yaruki
+  1:22:08: opened www.facebook.com, in_break: false
+  1:22:11: start timer
 
 
 License

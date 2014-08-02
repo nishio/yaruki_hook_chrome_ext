@@ -39,6 +39,7 @@ function main() {
                 }
             }
         ],
+        zIndex: 500,
 
         // inhibit scrolling while dialog is shown
         open: function(event, ui) {

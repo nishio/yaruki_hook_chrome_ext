@@ -34,3 +34,6 @@ License
 MIT License http://opensource.org/licenses/MIT
 
 
+Icons are under GPL
+http://www.iconarchive.com/show/elementary-icons-by-danrabbit/Apps-fusion-icon-icon.html
+

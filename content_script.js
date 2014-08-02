@@ -1,4 +1,17 @@
 function main() {
+    var port = chrome.extension.connect({name: 'yaruki_hook'});
+    var domain = get_domain();
+    port.postMessage({type: 'toRunMain', domain: domain});
+    port.onMessage.addListener(function(msg) {
+        if (msg.type == 'timeout') {
+            show_dialog();
+        }else if (msg.type == 'toRunMain') {
+            if (msg.value == true) {
+                show_dialog();
+            } // else already in rest
+        }
+    });
+
     $("<div id='dialog'>").appendTo($('body'));
     $('#dialog').text('あなたは今、やる気のない時に見られることの多いサイトを見ようとしています');
     $('#dialog').dialog({
@@ -41,21 +54,9 @@ function show_dialog() {
     $('#dialog').dialog('open');
 }
 
-function record() {
-    var domain = document.location.href.match(/\/\/([^/]+)/)[1];
+function get_domain() {
+    return document.location.href.match(/\/\/([^/]+)/)[1];
 }
-
-var port = chrome.extension.connect({name: 'yaruki_hook'});
-port.postMessage({type: 'toRunMain'});
-port.onMessage.addListener(function(msg) {
-    if (msg.type == 'timeout') {
-        show_dialog();
-    }else if (msg.type == 'toRunMain') {
-        if (msg.value == true) {
-            show_dialog();
-        } // else already in rest
-    }
-});
 
 main();
 

@@ -9,6 +9,12 @@ Facebook, Twitter, はてなブックマークなどの「やる気がない時�
 「やる気を出す」を選ぶと「やる気のでるアドバイス」を開きます。(http://www.nhiro.org/yaruki/)
 
 
+インストール
+============
+
+Chrome Web Storeからインストールできます。 https://chrome.google.com/webstore/detail/%E3%82%84%E3%82%8B%E6%B0%97%E3%83%95%E3%83%83%E3%82%AF/dfkndiabiangeeaioieoipmdkhmgmhgg
+
+
 未実装のアイデア
 ================
 

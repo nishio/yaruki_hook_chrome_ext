@@ -2,8 +2,8 @@
   "manifest_version": 2,
 
   "name": "やる気フック",
-  "description": "やる気を出すシステムへ誘導するメッセージを特定のサイトの表示時に出す",
-  "version": "1.0",
+  "description": "時間を浪費しそうなサイトの表示時に、5分だけ見るかやる気を出すかの二択を迫る",
+  "version": "2.0",
 
   "icons": {
       "16": "icon_16.png",

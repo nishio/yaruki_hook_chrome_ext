@@ -32,6 +32,8 @@ chrome.extension.onConnect.addListener(function(port) {
           emit_log('opened ' + msg.domain + ', in_break: ' + in_coffee_break);
           port_list.push(port);
           port.postMessage({type: 'toRunMain', value: !in_coffee_break});
+      }else if (msg.type == 'emitLog') {
+          emit_log(msg.message);
       }
   });
 });

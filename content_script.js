@@ -26,6 +26,7 @@ function main() {
                     text: 'やる気を出す',
                     click: function() {
                         $(this).dialog('close');
+                        port.postMessage({type: 'emitLog', message: 'yaruki'});
                         document.location = 'http://nhiro.org/yaruki/?ext';
                     }
                 },

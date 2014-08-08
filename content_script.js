@@ -11,7 +11,10 @@ function main() {
             } // else already in rest
         }
     });
+    createDialog();
+}
 
+function createDialog(){
     $("<div id='dialog'>").appendTo($('body'));
     $('#dialog').text('あなたは今、やる気のない時に見られることの多いサイトを見ようとしています');
     $('#dialog').dialog({

@@ -18,9 +18,7 @@
   "content_scripts": [
     {
       "matches": [
-          "https://www.facebook.com/*",
-          "https://twitter.com/*",
-          "http://b.hatena.ne.jp/*"
+          "*://*/*"
       ],
       "css": ["jquery-ui-1.11.0.custom/jquery-ui.structure.min.css",
               "jquery-ui-1.11.0.custom/jquery-ui.theme.min.css",

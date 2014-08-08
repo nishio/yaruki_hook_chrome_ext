@@ -1,7 +1,7 @@
 function main() {
     var port = chrome.extension.connect({name: 'yaruki_hook'});
     var domain = get_domain();
-    port.postMessage({type: 'toRunMain', domain: domain});
+
     port.onMessage.addListener(function(msg) {
         if (msg.type == 'timeout') {
             show_dialog();
@@ -11,6 +11,7 @@ function main() {
             } // else already in rest
         }
     });
+    port.postMessage({type: 'toRunMain', domain: domain, href: document.location.href});
     createDialog();
 }
 

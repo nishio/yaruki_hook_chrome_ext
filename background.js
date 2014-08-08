@@ -18,6 +18,20 @@ function notify_all() {
     emit_log('timeout');
 }
 
+function is_target(href){
+    try{
+        var target_list = JSON.parse(localStorage['target-list']);
+    }catch(e){
+        target_list = [/facebook/, /twitter/, /b\.hatena/];
+        localStorage['target-list'] = JSON.stringify(target_list);
+    }
+    return target_list.some(function(pattern){
+        if(href.match(pattern)){
+            return true;
+        }
+    });
+}
+
 chrome.extension.onConnect.addListener(function(port) {
   port.onMessage.addListener(function(msg) {
       if (msg.type == 'setTimeout') {
@@ -29,9 +43,13 @@ chrome.extension.onConnect.addListener(function(port) {
               notify_all();
           }, msg.delay);
       }else if (msg.type == 'toRunMain') {
-          emit_log('opened ' + msg.domain + ', in_break: ' + in_coffee_break);
-          port_list.push(port);
-          port.postMessage({type: 'toRunMain', value: !in_coffee_break});
+          if(is_target(msg.href)){
+              emit_log('opened ' + msg.domain + ', in_break: ' + in_coffee_break);
+              port_list.push(port);
+              port.postMessage({type: 'toRunMain', value: !in_coffee_break});
+          }else{
+              emit_log('opened ' + msg.domain + ', not target');
+          }
       }else if (msg.type == 'emitLog') {
           emit_log(msg.message);
       }

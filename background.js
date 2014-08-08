@@ -19,12 +19,17 @@ function notify_all() {
 }
 
 function is_target(href){
+    var target_list, s;
+    var default_patterns = ['facebook', 'twitter', 'b\.hatena'];
     try{
-        var target_list = JSON.parse(localStorage['target-list']);
+        s = JSON.parse(localStorage['target-list']);
+        if(s == null) s = default_patterns;
     }catch(e){
-        target_list = [/facebook/, /twitter/, /b\.hatena/];
-        localStorage['target-list'] = JSON.stringify(target_list);
+        s = default_patterns;
+        localStorage['target-list'] = JSON.stringify(s);
     }
+    target_list = s.map(function(x){return new RegExp(x)});
+
     return target_list.some(function(pattern){
         if(href.match(pattern)){
             return true;

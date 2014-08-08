@@ -45,6 +45,7 @@ Chrome Web Storeからインストールできます。 https://chrome.google.co
   1:22:08: opened www.facebook.com, in_break: false
   1:22:11: start timer
 
+フック対象でないものも含めて、自分がどんなサイトをどれくらいの時間見ているか知りたい場合はこちらの拡張がよさそうです。 https://chrome.google.com/webstore/detail/web-timer/ggnjbdfgigejghknieofeahaknkjafim
 
 License
 =======
